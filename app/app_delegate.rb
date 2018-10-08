@@ -1,7 +1,22 @@
 class AppDelegate
+
+  def uploadFromPasteboard(pboard, userData:udata, error:err)
+    filename = pboard.stringForType(NSURLPboardType)
+    s = NSSound.soundNamed "Pop"
+    s.delegate = self
+    s.play
+    puts "file: %s" % filename
+  end
+
+  def sound(sound, didFinishPlaying:aBool)
+    NSApp.terminate(nil)
+  end
+
   def applicationDidFinishLaunching(notification)
-    buildMenu
-    buildWindow
+    NSApp.setServicesProvider(self)
+
+    # buildMenu
+    # buildWindow
   end
 
   def buildWindow

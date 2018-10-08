@@ -1,0 +1,10 @@
+- NSMessage: uploadFromPasteboard
+  NSPortName: OSXTestApp01
+  NSMenuItem:
+    default: "OSX Test App 01"
+  NSRequiredContext: {}
+  NSSendTypes:
+    - NSURLPboardType
+    - public.utf8-plain-text
+    - NSPasteboardTypeString
+  NSReturnTypes: []

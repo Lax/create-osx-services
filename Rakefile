@@ -13,4 +13,6 @@ Motion::Project::App.setup do |app|
   app.name = 'create-osx-services'
 
   app.info_plist['CFBundleIconName'] = 'AppIcon'
+
+  app.info_plist['NSServices'] = YAML.load_file('services.yml')
 end
